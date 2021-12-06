@@ -10,6 +10,7 @@ int days_in_month[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 char *months[] = {" ","\n\n\n一月", "\n\n\n二月","\n\n\n三月","\n\n\n四月","\n\n\n五月","\n\n\n六月","\n\n\n七月", "\n\n\n八月","\n\n\n九月",
                 "\n\n\n十月","\n\n\n十一月", "\n\n\n十二月"};
 
+//番号の月の日です。
 int get_dayCode(int year) { 
     int daycode;
     int x, y, z;
@@ -20,6 +21,7 @@ int get_dayCode(int year) {
     return daycode;
 }
 
+//年はうるう年なければ、二月も29日です。でも、年はうるう年じゃなければ、二月は28日です。
 void setLeapYear(int year) {
     if(year == LEAP_YEAR) {
         days_in_month[2] = 29;
@@ -28,6 +30,7 @@ void setLeapYear(int year) {
     }
 }
 
+//カレンダーをプリントします。
 void print(int year, int daycode) {
     int month, day;
     printf("\n\n日本語のカレンダー");
@@ -51,6 +54,7 @@ void print(int year, int daycode) {
     }
 }
 
+//インプットをします。
 int main(void) {
     int year, daycode, leap;
     printf("\n四桁（けた）の年をタイプしてください!");
